@@ -37,7 +37,6 @@ def main():
         add_message(conversation_history, "user", summarize_input)
         assistant_response = client.get_response(conversation_history)
         print_message("Summary", assistant_response)
-        print("change")
         
         add_message(conversation_history, "assistant", assistant_response)
         break
