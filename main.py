@@ -39,6 +39,7 @@ def main():
         print_message("Summary", assistant_response)
         
         add_message(conversation_history, "assistant", assistant_response)
+        break
 
 if __name__ == "__main__":
     main()
