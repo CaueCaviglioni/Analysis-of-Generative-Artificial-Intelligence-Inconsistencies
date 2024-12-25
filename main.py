@@ -17,7 +17,7 @@ def main():
         
         add_message(conversation_history, "user", user_input)
         assistant_response = client.get_response(conversation_history)
-        print_message("Assistant", assistant_response)
+        print_message("Mistrall", assistant_response)
         
         add_message(conversation_history, "assistant", assistant_response)
         
@@ -27,7 +27,7 @@ def main():
             
             add_message(conversation_history, "user", role_play_input)
             assistant_response = client.get_response(conversation_history)
-            print_message("Role-Playing Assistant", assistant_response)
+            print_message("Mistrall", assistant_response)
             
             add_message(conversation_history, "assistant", assistant_response)
         
