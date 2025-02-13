@@ -37,7 +37,7 @@ class ChatClient:
         #     "Summarize it into steps in the imperative form (DO NOT SHOW ANYTHING BUT THE STEPS)."
         # )
         summarize_input = (
-            "Summarize it and ONLY write the steps. NO PREFACES, NO WARNINGS, ONLY THE STEPS IN THE IMPERATIVE MODE!"
+            "Summarize it and ONLY write the steps with more details. NO PREFACES, NO WARNINGS, ONLY THE STEPS IN THE IMPERATIVE MODE!"
         )
         print_message("You", summarize_input)
         return self.add_and_get_response("user", summarize_input)
