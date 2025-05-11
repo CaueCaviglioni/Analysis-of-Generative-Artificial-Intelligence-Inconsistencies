@@ -32,7 +32,10 @@ echo "API_KEY=your_mistral_api_key_here" > .env
 
 # 5. Run the Application
 # MacOS/Linux (Ubuntu)
-python main.py
+python ui/app.py
 
 # Windows
-python main.py
+python .\ui\app.py
+
+# Observation
+In some versions of python dash, the line app.run() present in the file app.py does not work. In this case, consider modifying this line to app.run_server().
