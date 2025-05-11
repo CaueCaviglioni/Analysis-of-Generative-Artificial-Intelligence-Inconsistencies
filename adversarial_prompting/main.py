@@ -10,18 +10,15 @@ init(autoreset=True)
 
 def format_response(response, width: int = 80) -> str:
     """
-    Formata qualquer resposta da API para uma exibição melhor no terminal.
-    - Converte **negrito** para texto destacado.
-    - Converte `código` para texto em amarelo.
-    - Formata listas numeradas e itens iniciados com '-' ou '•'.
-    - Realiza quebra de linha para manter a largura definida.
+    Formats any API response for better display in the terminal.
+    - Converts **bold** to highlighted text.
+    - Converts `code` to yellow text.
+    - Formats numbered lists and items starting with '-' or '•'.
+    - Wraps lines to maintain the defined width.
     """
-    # Converte a resposta para string, caso não seja
-    response = str(response)
     
-    # Formata negrito (**texto**)
+    response = str(response)
     response = re.sub(r"\*\*(.*?)\*\*", lambda m: Style.BRIGHT + m.group(1) + Style.NORMAL, response)
-    # Formata código inline (`texto`)
     response = re.sub(r"`(.*?)`", lambda m: Fore.YELLOW + m.group(1) + Fore.RESET, response)
     
     formatted_lines = []
@@ -43,7 +40,6 @@ def main():
     assistant_response = client.add_and_get_response("user", user_input)
     print_message("Mistrall", format_response(assistant_response))
     
-    # Converter a resposta para string antes de verificar se é negativa
     if is_negative_response(str(assistant_response)):
         assistant_response = client.handle_negative_response()
         print_message("Mistrall", format_response(assistant_response))

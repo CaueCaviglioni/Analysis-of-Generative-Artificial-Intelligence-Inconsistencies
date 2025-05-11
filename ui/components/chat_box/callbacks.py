@@ -85,4 +85,3 @@ def register_chat_messages(app):
         client.reset()
 
         return updated_messages, False, False
-
